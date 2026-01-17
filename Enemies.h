@@ -3,7 +3,7 @@
 
 
 #include "globals.h"
-
+#include "Player.h"
 
 class Enemies {
 private:
@@ -32,7 +32,7 @@ public:
     [[nodiscard]] static int getEnemyCount();
 
     void generateName();
-    void followPlayer();
+    void followPlayer(Player& player);
     void draw(sf::RenderWindow& window);
 };
 

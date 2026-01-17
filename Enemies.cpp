@@ -1,5 +1,5 @@
 #include "Enemies.h"
-#include <SFML/Graphics/RenderWindow.hpp>
+#include "Player.h"
 
 int Enemies::enemyCount = 0;
 
@@ -33,6 +33,23 @@ void Enemies::draw(sf::RenderWindow& window) {
     window.draw(rectangle);
 
 }
-void Enemies::followPlayer() {
-    
+void Enemies::followPlayer(Player& player) {
+    sf::Vector2f playerPos = player.getCircle().getPosition();
+    sf::Vector2f enemyPos = rectangle.getPosition();
+
+    float x, y = 0.f;
+
+    if (playerPos.x > enemyPos.x) {
+        x = ENEMY_SPEED;
+    } else if (playerPos.x < enemyPos.x) {
+        x = -ENEMY_SPEED;
+    }
+
+    if (playerPos.y > enemyPos.y) {
+        y = ENEMY_SPEED;
+    } else if (playerPos.y < enemyPos.y) {
+        y = -ENEMY_SPEED;
+    }
+
+    rectangle.move({x, y});
 }

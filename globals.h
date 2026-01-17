@@ -29,4 +29,8 @@ const vect3 RED_VEIN = {136, 69, 19};
 const vect3 WHITE_VEIN = {210, 180, 140};
 
 
+const float PLAYER_SPEED = 5.0f;
+const float ENEMY_SPEED = 2.0f;
+
+
 #endif // GLOBALS_H

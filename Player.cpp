@@ -17,16 +17,16 @@ bool Player::isAlive() const {
 }
 
 void Player::moveRight(sf::CircleShape& circle) {
-    circle.move({5.f, 0.f});
+    circle.move({PLAYER_SPEED, 0.f});
 }
 void Player::moveLeft(sf::CircleShape& circle) {
-    circle.move({-5.f, 0.f});
+    circle.move({-PLAYER_SPEED, 0.f});
 }
 void Player::moveUp(sf::CircleShape& circle) {
-    circle.move({0.f, -5.f});
+    circle.move({0.f, -PLAYER_SPEED});
 }
 void Player::moveDown(sf::CircleShape& circle) {
-    circle.move({0.f, 5.f});
+    circle.move({0.f, PLAYER_SPEED});
 }
 void Player::draw(sf::RenderWindow& window) {
     window.draw(circle);

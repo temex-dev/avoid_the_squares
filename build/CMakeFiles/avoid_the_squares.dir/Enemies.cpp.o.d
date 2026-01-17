@@ -293,4 +293,5 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o: \
  /usr/include/SFML/System/FileInputStream.hpp \
  /usr/include/SFML/System/InputStream.hpp \
  /usr/include/SFML/System/MemoryInputStream.hpp \
- /usr/include/SFML/System/Sleep.hpp
+ /usr/include/SFML/System/Sleep.hpp \
+ /home/tomas/Projects/avoid_the_squares/Player.h
