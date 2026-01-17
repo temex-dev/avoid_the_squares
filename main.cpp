@@ -42,8 +42,11 @@ int main() {
             pPlayer->moveDown(pPlayer->getCircle());
         }
 
+
 //enemy movement
-        pEnemy1->followPlayer(Player *pPlayer);
+        pEnemy1->followPlayer(*pPlayer);
+
+
 //drawing on screen
         window.clear(sf::Color(GREEN_VEIN.r, GREEN_VEIN.g, GREEN_VEIN.b)); //settings background color
         pPlayer->draw(window);
