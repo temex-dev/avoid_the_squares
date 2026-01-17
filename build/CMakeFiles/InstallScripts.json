@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/tomas/Projects/avoid_the_squares/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

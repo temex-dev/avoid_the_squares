@@ -1,0 +1,3 @@
+/home/tomas/Projects/avoid_the_squares/build/CMakeFiles/avoid_the_squares.dir
+/home/tomas/Projects/avoid_the_squares/build/CMakeFiles/edit_cache.dir
+/home/tomas/Projects/avoid_the_squares/build/CMakeFiles/rebuild_cache.dir

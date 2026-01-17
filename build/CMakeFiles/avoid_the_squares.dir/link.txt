@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/avoid_the_squares.dir/link.d CMakeFiles/avoid_the_squares.dir/main.cpp.o CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o CMakeFiles/avoid_the_squares.dir/Player.cpp.o -o avoid_the_squares  -lsfml-graphics -lsfml-window -lsfml-system

@@ -1,0 +1,32 @@
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <ctime>
+#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Window/VideoMode.hpp>
+#include <SFML/Window/WindowEnums.hpp>
+#include <SFML/Window/ContextSettings.hpp>
+#include <SFML/System/Vector2.hpp>
+
+using namespace std;
+
+const int DISPLAY_WIDTH = 1920;
+const int DISPLAY_HEIGHT = 1080;
+const int WINDOW_SIZE = 800;
+
+
+struct vect3 { int r, g, b; };
+const vect3 GREEN_VEIN = {75, 83, 32};
+const vect3 RED_VEIN = {136, 69, 19};
+const vect3 WHITE_VEIN = {210, 180, 140};
+
+
+#endif // GLOBALS_H
