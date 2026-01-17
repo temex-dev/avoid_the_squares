@@ -1,5 +1,5 @@
 [x] movement system for player, WSAD
-[xz] movement system for enemies, AI, always going towards player
+[x] movement system for enemies, AI, always going towards player
 [] playing sounds, losing health, dying, beating high score
 [] give enemies delay after hitting like 1 second so they doent insta kill
 [] add enemies based on time, more time alive, more enemies spawn
