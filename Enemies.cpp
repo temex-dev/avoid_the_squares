@@ -37,7 +37,7 @@ void Enemies::followPlayer(Player& player) {
     sf::Vector2f playerPos = player.getCircle().getPosition();
     sf::Vector2f enemyPos = rectangle.getPosition();
 
-    float x, y = 0.f;
+    float x = 0.f, y = 0.f;
 
     if (playerPos.x > enemyPos.x) {
         x = ENEMY_SPEED;
@@ -52,4 +52,7 @@ void Enemies::followPlayer(Player& player) {
     }
 
     rectangle.move({x, y});
+}
+sf::RectangleShape& Enemies::getRectangle() const {
+    return const_cast<sf::RectangleShape&>(this->rectangle);
 }

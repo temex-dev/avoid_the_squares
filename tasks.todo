@@ -7,3 +7,5 @@
 [] place somewhere count of enemies
 [] place player name above circle
 [] menu(cli?) - choose player name, starting enemy count, player health, enemy damage
+[x] let player teleport between walls - go right, appear left
+[] detect enemy touching player - NEEDS TWEAKING

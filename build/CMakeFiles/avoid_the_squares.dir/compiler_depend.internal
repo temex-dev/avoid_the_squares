@@ -4,6 +4,7 @@
 CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o
  /home/tomas/Projects/avoid_the_squares/Enemies.cpp
  /home/tomas/Projects/avoid_the_squares/Enemies.h
+ /home/tomas/Projects/avoid_the_squares/Player.h
  /home/tomas/Projects/avoid_the_squares/globals.h
  /usr/include/SFML/Config.hpp
  /usr/include/SFML/Graphics.hpp
@@ -402,6 +403,7 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o
 
 CMakeFiles/avoid_the_squares.dir/Player.cpp.o
  /home/tomas/Projects/avoid_the_squares/Player.cpp
+ /home/tomas/Projects/avoid_the_squares/Enemies.h
  /home/tomas/Projects/avoid_the_squares/Player.h
  /home/tomas/Projects/avoid_the_squares/globals.h
  /usr/include/SFML/Config.hpp

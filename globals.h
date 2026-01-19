@@ -1,5 +1,6 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
+#pragma once
 
 #include <iostream>
 #include <fstream>
@@ -14,6 +15,7 @@
 #include <SFML/Window/VideoMode.hpp>
 #include <SFML/Window/WindowEnums.hpp>
 #include <SFML/Window/ContextSettings.hpp>
+#include <SFML/System/Sleep.hpp>
 #include <SFML/System/Vector2.hpp>
 
 using namespace std;
@@ -32,5 +34,7 @@ const vect3 WHITE_VEIN = {210, 180, 140};
 const float PLAYER_SPEED = 5.0f;
 const float ENEMY_SPEED = 2.0f;
 
+const float PLAYER_SIZE = 20.f;
+const float ENEMY_SIZE = 40.f;
 
 #endif // GLOBALS_H

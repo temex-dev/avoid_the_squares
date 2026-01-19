@@ -3,6 +3,7 @@
 
 CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o: /home/tomas/Projects/avoid_the_squares/Enemies.cpp \
   /home/tomas/Projects/avoid_the_squares/Enemies.h \
+  /home/tomas/Projects/avoid_the_squares/Player.h \
   /home/tomas/Projects/avoid_the_squares/globals.h \
   /usr/include/SFML/Config.hpp \
   /usr/include/SFML/Graphics.hpp \
@@ -400,6 +401,7 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o: /home/tomas/Projects/avoid_the_s
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h
 
 CMakeFiles/avoid_the_squares.dir/Player.cpp.o: /home/tomas/Projects/avoid_the_squares/Player.cpp \
+  /home/tomas/Projects/avoid_the_squares/Enemies.h \
   /home/tomas/Projects/avoid_the_squares/Player.h \
   /home/tomas/Projects/avoid_the_squares/globals.h \
   /usr/include/SFML/Config.hpp \
@@ -1281,8 +1283,6 @@ avoid_the_squares: /usr/lib/Scrt1.o \
 
 /home/tomas/Projects/avoid_the_squares/main.cpp:
 
-/home/tomas/Projects/avoid_the_squares/Player.h:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/syslimits.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdint.h:
@@ -1463,6 +1463,8 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o:
 
 /usr/include/c++/15.2.1/bits/stl_iterator.h:
 
+/usr/include/c++/15.2.1/bits/stl_function.h:
+
 /usr/include/bits/stdint-least.h:
 
 /usr/lib/libc.so:
@@ -1553,14 +1555,6 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o:
 
 /usr/include/c++/15.2.1/bits/fstream.tcc:
 
-/usr/include/c++/15.2.1/limits:
-
-/usr/include/bits/struct_mutex.h:
-
-/usr/include/c++/15.2.1/bits/istream.tcc:
-
-/usr/include/c++/15.2.1/bits/stl_construct.h:
-
 /usr/include/SFML/Window/GlResource.hpp:
 
 /usr/include/c++/15.2.1/vector:
@@ -1596,14 +1590,6 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o:
 /usr/include/SFML/Window/Event.hpp:
 
 /usr/include/SFML/System/String.inl:
-
-/usr/include/SFML/Graphics/Sprite.hpp:
-
-/home/tomas/Projects/avoid_the_squares/Player.cpp:
-
-/usr/include/SFML/Graphics/Export.hpp:
-
-/home/tomas/Projects/avoid_the_squares/Enemies.h:
 
 /usr/include/SFML/Graphics/RenderTarget.hpp:
 
@@ -1675,8 +1661,6 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o:
 
 /usr/include/c++/15.2.1/bits/invoke.h:
 
-/usr/include/c++/15.2.1/bits/stl_function.h:
-
 /usr/include/c++/15.2.1/system_error:
 
 /usr/include/bits/stdint-uintn.h:
@@ -1719,6 +1703,18 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o:
 
 /usr/include/SFML/System/Err.hpp:
 
+/usr/include/SFML/System/Vector3.hpp:
+
+/home/tomas/Projects/avoid_the_squares/Player.h:
+
+/usr/include/bits/pthreadtypes-arch.h:
+
+/usr/include/c++/15.2.1/bits/fs_fwd.h:
+
+/usr/lib/crtn.o:
+
+/usr/include/c++/15.2.1/bits/functional_hash.h:
+
 /usr/include/bits/stdlib-float.h:
 
 /usr/include/bits/time64.h:
@@ -1746,6 +1742,14 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o:
 /usr/include/SFML/Graphics/Rect.hpp:
 
 /usr/include/bits/types/struct_tm.h:
+
+/home/tomas/Projects/avoid_the_squares/Player.cpp:
+
+/usr/include/SFML/Graphics/Export.hpp:
+
+/usr/include/SFML/Graphics/Sprite.hpp:
+
+/home/tomas/Projects/avoid_the_squares/Enemies.h:
 
 /usr/include/SFML/Graphics/ConvexShape.hpp:
 
@@ -1798,16 +1802,6 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o:
 /usr/include/SFML/Graphics/VertexArray.hpp:
 
 /usr/include/c++/15.2.1/bits/fs_ops.h:
-
-/usr/include/SFML/System/Vector3.hpp:
-
-/usr/include/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/15.2.1/bits/fs_fwd.h:
-
-/usr/lib/crtn.o:
-
-/usr/include/c++/15.2.1/bits/functional_hash.h:
 
 /usr/include/bits/libc-header-start.h:
 
@@ -1864,6 +1858,14 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o:
 /usr/include/c++/15.2.1/bits/basic_string.tcc:
 
 /usr/include/SFML/System/Vector2.hpp:
+
+/usr/include/c++/15.2.1/limits:
+
+/usr/include/c++/15.2.1/bits/istream.tcc:
+
+/usr/include/c++/15.2.1/bits/stl_construct.h:
+
+/usr/include/bits/struct_mutex.h:
 
 /usr/include/bits/struct_rwlock.h:
 

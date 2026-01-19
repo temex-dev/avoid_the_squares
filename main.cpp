@@ -2,6 +2,7 @@
 #include "Enemies.h"
 #include "globals.h"
 
+bool start = true;
 
 int main() {
     sf::RenderWindow window(sf::VideoMode({WINDOW_SIZE, WINDOW_SIZE}),
@@ -29,29 +30,22 @@ int main() {
 
 
 //player movement
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) {
-        pPlayer->moveLeft(pPlayer->getCircle());
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) {
-           pPlayer->moveRight(pPlayer->getCircle());
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) {
-        pPlayer->moveUp(pPlayer->getCircle());
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
-            pPlayer->moveDown(pPlayer->getCircle());
-        }
-
+        pPlayer->movement(pPlayer->getCircle());
 
 //enemy movement
         pEnemy1->followPlayer(*pPlayer);
 
+//detect collision
+        if (pPlayer->detectCollision(*pEnemy1) == true){
+            cout << pPlayer->detectCollision(*pEnemy1) << endl;
+        }
 
 //drawing on screen
         window.clear(sf::Color(GREEN_VEIN.r, GREEN_VEIN.g, GREEN_VEIN.b)); //settings background color
         pPlayer->draw(window);
         pEnemy1->draw(window);
         window.display();
+        if (start) {sf::sleep(sf::seconds(3)); start = false; }
     }
     return 0;
 }
