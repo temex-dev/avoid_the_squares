@@ -16,6 +16,7 @@
 #include <SFML/Window/WindowEnums.hpp>
 #include <SFML/Window/ContextSettings.hpp>
 #include <SFML/System/Sleep.hpp>
+#include <SFML/System/Clock.hpp>
 #include <SFML/System/Vector2.hpp>
 
 using namespace std;

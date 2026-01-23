@@ -1,6 +1,5 @@
 #ifndef ENEMIES_H
 #define ENEMIES_H
-#include <SFML/Graphics/RectangleShape.hpp>
 #pragma once
 
 #include "globals.h"

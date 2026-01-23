@@ -1,6 +1,5 @@
 #include "Player.h"
 #include "Enemies.h"
-#include <SFML/System/Vector2.hpp>
 
 string Player::getName() const {
     return this->name;
@@ -9,18 +8,26 @@ int Player::getHealth() const {
     return this->health;
 }
 void Player::takeDamage(int damage) {
-    this->health -= damage;
-    if (this->health < 0) {
-        this->health = 0;
+    if (this->damageCooldown.getElapsedTime().asSeconds() >= 1.0f) {
+        this->health -= damage;
+        if (this->health < 0) {
+            this->health = 0;
+        }
+        this->damageCooldown.restart();
     }
 }
 bool Player::detectCollision(Enemies& enemy) const {
     const sf::Vector2<float> playerPos = this->circle.getPosition();
     const sf::Vector2<float> enemyPos = enemy.getRectangle().getPosition();
 
-    if (playerPos.x == enemyPos.x && playerPos.y == enemyPos.y) {
+    if (playerPos.x + PLAYER_SIZE >= enemyPos.x &&
+        playerPos.x - PLAYER_SIZE <= enemyPos.x + ENEMY_SIZE &&
+        playerPos.y + PLAYER_SIZE >= enemyPos.y &&
+        playerPos.y - PLAYER_SIZE <= enemyPos.y + ENEMY_SIZE) {
         return true;
     }
+
+
     return false;
 }
 

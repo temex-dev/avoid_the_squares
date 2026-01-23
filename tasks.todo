@@ -1,11 +1,11 @@
 [x] movement system for player, WSAD
 [x] movement system for enemies, AI, always going towards player
 [] playing sounds, losing health, dying, beating high score
-[] give enemies delay after hitting like 1 second so they doent insta kill
+[x] give enemies delay after hitting like 1 second so they dont insta kill
 [] add enemies based on time, more time alive, more enemies spawn
 [] place timer at top of the screen
 [] place somewhere count of enemies
 [] place player name above circle
 [] menu(cli?) - choose player name, starting enemy count, player health, enemy damage
 [x] let player teleport between walls - go right, appear left
-[] detect enemy touching player - NEEDS TWEAKING
+[x] detect enemy touching player - NEEDS TWEAKING

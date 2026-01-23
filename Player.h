@@ -12,12 +12,14 @@ private:
     int health;
     int x, y;
     sf::CircleShape circle;
+    sf::Clock damageCooldown;
 public:
     Player(const string &name, int health, sf::RenderWindow& window)
         : name(name), health(health), x(window.getSize().x / 2), y(window.getSize().y / 2) {
             this->circle.setRadius(PLAYER_SIZE);
             this->circle.setFillColor(sf::Color(WHITE_VEIN.r, WHITE_VEIN.g, WHITE_VEIN.b));
             this->circle.setPosition(sf::Vector2<float>(((float)WINDOW_SIZE / 2) - PLAYER_SIZE, 200.f));
+            this->damageCooldown.restart();
             cout << "Player " << this->name << " created with " << this->health << " health at x,y: " << this->x << "," << this->y << ".\n";
 
     }
