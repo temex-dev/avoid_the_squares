@@ -3,9 +3,10 @@
 [] playing sounds, losing health, dying, beating high score
 [x] give enemies delay after hitting like 1 second so they dont insta kill
 [] add enemies based on time, more time alive, more enemies spawn
-[] place timer at top of the screen
+[x] place timer at top of the screen
 [] place somewhere count of enemies
 [] place player name above circle
 [] menu(cli?) - choose player name, starting enemy count, player health, enemy damage
 [x] let player teleport between walls - go right, appear left
 [x] detect enemy touching player - NEEDS TWEAKING
+[] draw a square where all enemies will spawn - danger zone

@@ -38,4 +38,10 @@ const float ENEMY_SPEED = 2.0f;
 const float PLAYER_SIZE = 20.f;
 const float ENEMY_SIZE = 40.f;
 
+const float DEF_PLAYER_X = (float)WINDOW_SIZE / 2;
+const float DEF_PLAYER_Y = 200.f;
+
+const float DEF_ENEMY_X = (float)WINDOW_SIZE / 2;
+const float DEF_ENEMY_Y = 600.f;
+
 #endif // GLOBALS_H

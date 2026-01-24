@@ -15,10 +15,10 @@ private:
     sf::Clock damageCooldown;
 public:
     Player(const string &name, int health, sf::RenderWindow& window)
-        : name(name), health(health), x(window.getSize().x / 2), y(window.getSize().y / 2) {
+        : name(name), health(health), x(DEF_PLAYER_X), y(DEF_PLAYER_Y) {
             this->circle.setRadius(PLAYER_SIZE);
             this->circle.setFillColor(sf::Color(WHITE_VEIN.r, WHITE_VEIN.g, WHITE_VEIN.b));
-            this->circle.setPosition(sf::Vector2<float>(((float)WINDOW_SIZE / 2) - PLAYER_SIZE, 200.f));
+            this->circle.setPosition(sf::Vector2<float>(DEF_PLAYER_X, DEF_PLAYER_Y));
             this->damageCooldown.restart();
             cout << "Player " << this->name << " created with " << this->health << " health at x,y: " << this->x << "," << this->y << ".\n";
 
@@ -41,6 +41,7 @@ public:
 
     [[nodiscard]] bool detectCollision(Enemies& enemy) const;
     void takeDamage(int damage);
+    
 };
 
 

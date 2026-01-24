@@ -16,12 +16,12 @@ private:
     static int enemyCount;
 public:
     Enemies(int damage, const sf::RenderWindow& window)
-        : name("N/A"), damage(damage), x(window.getSize().x / 2), y(window.getSize().y / 2) {
+        : name("N/A"), damage(damage), x(DEF_ENEMY_X), y(DEF_ENEMY_Y) {
             this->generateName();
             enemyCount++;
             this->rectangle.setSize({ENEMY_SIZE, ENEMY_SIZE});
             this->rectangle.setFillColor(sf::Color(RED_VEIN.r, RED_VEIN.g, RED_VEIN.b));
-            this->rectangle.setPosition(sf::Vector2<float>(((float)WINDOW_SIZE / 2) - (ENEMY_SIZE / 2), 600.f));
+            this->rectangle.setPosition(sf::Vector2<float>(DEF_ENEMY_X, DEF_ENEMY_Y));
             cout << "Enemy " << this->name << " created with " << this->damage << " damage at x,y: "<< this->x << "," << this->y << ".\n";
     }
 
