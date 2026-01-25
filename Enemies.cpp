@@ -3,6 +3,12 @@
 
 int Enemies::enemyCount = 0;
 
+void Enemies::resetEnemyCount() {
+    Enemies::enemyCount = 0;
+}
+int Enemies::getEnemyCount() {
+    return enemyCount;
+}
 string Enemies::getName() const {
     return this->name;
 }
@@ -10,28 +16,34 @@ int Enemies::getDamage() const {
     return this->damage;
 }
 void Enemies::generateName() {
-    vector<string> names;
-    string line;
-    ifstream file("../names.txt");
-    
-    while (getline(file, line)) {
-        names.push_back(line);
+    static vector<string> names;
+    static bool loaded = false;
+
+    if (!loaded) {
+        ifstream file("../names.txt");
+        string line;
+
+        while (getline(file, line)) {
+            if (!line.empty())
+                names.push_back(line);
+        }
+
+        file.close();
+        loaded = true;
     }
-    file.close();
 
     if (!names.empty()) {
-        srand(time(0));
         int randomIndex = rand() % names.size();
         this->name = names[randomIndex];
+    } else {
+        this->name = "Unknown";
     }
 }
 
-int Enemies::getEnemyCount() {
-    return enemyCount;
-}
 void Enemies::draw(sf::RenderWindow& window) {
     string name = this->getName();
     sf::Text nameText(FONT);
+    nameText.setString("");
     
     nameText.setPosition({ this->rectangle.getPosition().x, this->rectangle.getPosition().y - 45.f });
     nameText.setCharacterSize(30);

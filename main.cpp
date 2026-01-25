@@ -2,47 +2,45 @@
 #include "Enemies.h"
 #include "globals.h"
 
-
-
 int main() {
-    bool gameRunning = true;
-    vector<Enemies*> enemies;
+    sf::RenderWindow window(sf::VideoMode({WINDOW_SIZE, WINDOW_SIZE}),
+            "Avoid the Squares",
+            sf::Style::Default,
+            sf::State::Windowed);    
+    window.setFramerateLimit(60);
+    window.setPosition({(DISPLAY_WIDTH / 2) - WINDOW_SIZE / 2, (DISPLAY_HEIGHT / 2) - WINDOW_SIZE / 2} );
+    sf::ContextSettings settings;
+    settings.antiAliasingLevel = 8;
 
+    bool gameRunning = true;
+    
     while (gameRunning) {
         bool start = true;
-        sf::RenderWindow window(sf::VideoMode({WINDOW_SIZE, WINDOW_SIZE}),
-                "Avoid the Squares",
-                sf::Style::Default,
-                sf::State::Windowed);
-        sf::ContextSettings settings;
-        settings.antiAliasingLevel = 8;
-
-        window.setPosition({(DISPLAY_WIDTH / 2) - WINDOW_SIZE / 2, (DISPLAY_HEIGHT / 2) - WINDOW_SIZE / 2} );
-        window.setFramerateLimit(60);
-
+        vector<Enemies*> enemies;
 
         sf::Clock gameClock;
+        sf::Clock enemySpawnClock;
         sf::Text clock(FONT);
-        clock.setPosition( {WINDOW_SIZE / 2.f - 20.f, 10.f} );
-
+        clock.setString("");
+        clock.setPosition({WINDOW_SIZE / 2.f - 20.f, 10.f});
 
 //danger zone
         sf::RectangleShape dangerZone;
         dangerZone.setSize({50.f, 50.f});
         dangerZone.setFillColor(sf::Color(sf::Color::Red));
-        dangerZone.setPosition({DEF_ENEMY_X - 5.f, DEF_ENEMY_Y });
+        dangerZone.setPosition({DEF_ENEMY_X - 5.f, DEF_ENEMY_Y});
 
 //number of enemies
         sf::Text enemyCount(FONT);
-        enemyCount.setPosition( {10.f, 10.f} );
+        enemyCount.setPosition({10.f, 10.f});
         enemyCount.setCharacterSize(24);
         enemyCount.setFillColor(sf::Color::White);
-        enemyCount.setString("Enemies: " + to_string(Enemies::getEnemyCount()));
 
         bool gameOver = false;
 
         auto *pPlayer = new Player("Hero", 100, window);
-
+        auto *pEnemy = new Enemies(20, window);
+        enemies.push_back(pEnemy);
 
 //game loop
         while (window.isOpen() && !gameOver) {
@@ -54,15 +52,6 @@ int main() {
                 }
             }
 
-            if (gameClock.getElapsedTime().asSeconds() >= ENEMY_INTERVAL) {
-                auto *pEnemy = new Enemies(10, window);
-                enemies.push_back(pEnemy);
-                enemyCount.setString("Enemies: " + to_string(Enemies::getEnemyCount()));
-                gameClock.restart();
-            }
-
-
-            
             if (pPlayer->isAlive()) {
                 window.clear(sf::Color(GREEN_VEIN.r, GREEN_VEIN.g, GREEN_VEIN.b));
 //starter screen     
@@ -85,11 +74,12 @@ int main() {
                         window.display();
                         sf::sleep(sf::seconds(1));
                         window.clear(sf::Color(GREEN_VEIN.r, GREEN_VEIN.g, GREEN_VEIN.b));
-                        gameClock.restart();
                     }
                     start = false;
-
+                    gameClock.restart();
+                    enemySpawnClock.restart();
                 }
+
 //timer
                 int elapsed = gameClock.getElapsedTime().asMilliseconds();
                 int minutes = elapsed / 60000;
@@ -104,9 +94,14 @@ int main() {
                 if (milliseconds < 100) timeStr += "0";
                 if (milliseconds < 10) timeStr += "0";
                 timeStr += to_string(milliseconds);
+                clock.setString(timeStr); 
 
-                clock.setString(timeStr);
-
+//spawn new enemy every 15s
+                if (enemySpawnClock.getElapsedTime().asSeconds() >= 15.f) {
+                    auto *newEnemy = new Enemies(20, window);
+                    enemies.push_back(newEnemy);
+                    enemySpawnClock.restart();
+                }
 //player movement
                 pPlayer->movement(pPlayer->getCircle());
 //enemy movement
@@ -116,12 +111,13 @@ int main() {
 
 //collision detection
                 for (Enemies* enemy : enemies) {
-                    if (pPlayer->detectCollision(*enemy) == true){
+                    if (pPlayer->detectCollision(*enemy)) {
                         pPlayer->takeDamage(enemy->getDamage());
                     }
                 }
                 
 //drawing on screen
+                enemyCount.setString("Enemies: " + to_string(Enemies::getEnemyCount()));
                 window.draw(dangerZone);
                 pPlayer->draw(window);
                 for (Enemies* enemy : enemies) {
@@ -138,7 +134,7 @@ int main() {
                 sf::Text instruction(FONT);
                 sf::Text time(FONT);
                 sf::Text killer(FONT);
-                
+
                 gameOverText.setPosition({ WINDOW_SIZE / 3.f + 20.f, WINDOW_SIZE / 3.f });
                 gameOverText.setCharacterSize(70);
                 gameOverText.setFillColor(sf::Color::Red);
@@ -157,7 +153,8 @@ int main() {
                 time.setPosition({ WINDOW_SIZE / 3.f + 50.f, WINDOW_SIZE / 2.f });
                 time.setCharacterSize(30);
                 time.setFillColor(sf::Color::White);
-                time.setString("Your time: " + clock.getString());
+                string finalTime = clock.getString().toAnsiString();
+                time.setString("Your time: " + finalTime);
 
                 window.draw(killer);
                 window.draw(gameOverText);
@@ -169,22 +166,18 @@ int main() {
                     gameOver = true;
                 }
                 else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
-                    delete pPlayer;
-                    for (Enemies* enemy : enemies) {
-                        delete enemy;
-                    }
-                    exit(0);
+                    gameRunning = false;
+                    gameOver = true;
                 }
             }
+        }
 //ending program / restarting
         delete pPlayer;
         for (Enemies* enemy : enemies) {
             delete enemy;
         }
         enemies.clear();
-        }
-
+        Enemies::resetEnemyCount();
     }
-
     return 0;
 }

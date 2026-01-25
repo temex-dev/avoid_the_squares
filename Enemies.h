@@ -35,6 +35,8 @@ public:
     void generateName();
     void followPlayer(Player& player);
     void draw(sf::RenderWindow& window);
+
+    static void resetEnemyCount();
 };
 
 
