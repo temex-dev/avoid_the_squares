@@ -44,4 +44,10 @@ const float DEF_PLAYER_Y = 200.f;
 const float DEF_ENEMY_X = (float)WINDOW_SIZE / 2;
 const float DEF_ENEMY_Y = 600.f;
 
+const sf::Font FONT("../resources/OMORI_GAME.ttf");
+
+const float ENEMY_INTERVAL = 15.f;
+
+extern string LAST_HIT;
+
 #endif // GLOBALS_H

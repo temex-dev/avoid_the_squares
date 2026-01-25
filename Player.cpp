@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Enemies.h"
+string LAST_HIT;
 
 string Player::getName() const {
     return this->name;
@@ -24,6 +25,7 @@ bool Player::detectCollision(Enemies& enemy) const {
         playerPos.x - PLAYER_SIZE <= enemyPos.x + ENEMY_SIZE &&
         playerPos.y + PLAYER_SIZE >= enemyPos.y &&
         playerPos.y - PLAYER_SIZE <= enemyPos.y + ENEMY_SIZE) {
+        LAST_HIT = enemy.getName();
         return true;
     }
 
@@ -48,7 +50,28 @@ void Player::moveDown(sf::CircleShape& circle) {
     circle.move({0.f, PLAYER_SPEED});
 }
 void Player::draw(sf::RenderWindow& window) {
+    string name = this->getName();
+    sf::RectangleShape healthBackground;
+    sf::RectangleShape healthForeground;
+    sf::Text nameText(FONT);
+
+    nameText.setPosition({ this->circle.getPosition().x - 25.f, this->circle.getPosition().y - 45.f });
+    nameText.setCharacterSize(30);
+    nameText.setFillColor(sf::Color::White);
+    nameText.setString(name);
+
+    healthBackground.setSize({100.f, 10.f});
+    healthBackground.setFillColor(sf::Color::Red);
+    healthBackground.setPosition({ this->circle.getPosition().x - 25.f, this->circle.getPosition().y - 15.f });
+
+    healthForeground.setSize({ (float)(this->getHealth()), 10.f });
+    healthForeground.setFillColor(sf::Color::Green);
+    healthForeground.setPosition({ this->circle.getPosition().x - 25.f, this->circle.getPosition().y - 15.f });
+
+    window.draw(nameText);
     window.draw(circle);
+    window.draw(healthBackground);
+    window.draw(healthForeground);
 }
 sf::CircleShape& Player::getCircle() const {
     return const_cast<sf::CircleShape&>(this->circle);

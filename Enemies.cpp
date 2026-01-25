@@ -30,6 +30,15 @@ int Enemies::getEnemyCount() {
     return enemyCount;
 }
 void Enemies::draw(sf::RenderWindow& window) {
+    string name = this->getName();
+    sf::Text nameText(FONT);
+    
+    nameText.setPosition({ this->rectangle.getPosition().x, this->rectangle.getPosition().y - 45.f });
+    nameText.setCharacterSize(30);
+    nameText.setFillColor(sf::Color::White);
+    nameText.setString(name);
+
+    window.draw(nameText);
     window.draw(rectangle);
 
 }

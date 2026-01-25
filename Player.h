@@ -9,6 +9,7 @@ class Enemies;
 class Player {
 private:
     string name;
+
     int health;
     int x, y;
     sf::CircleShape circle;
