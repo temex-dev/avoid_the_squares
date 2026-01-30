@@ -87,12 +87,12 @@ int main() {
                 int milliseconds = elapsed % 1000;
 
                 string timeStr = "";
-                if (minutes < 10) timeStr += "0";
+                if (minutes < 10) {timeStr += "0";}
                 timeStr += to_string(minutes) + ":";
-                if (seconds < 10) timeStr += "0";
+                if (seconds < 10) {timeStr += "0";}
                 timeStr += to_string(seconds) + ":";
-                if (milliseconds < 100) timeStr += "0";
-                if (milliseconds < 10) timeStr += "0";
+                if (milliseconds < 100) {timeStr += "0";}
+                if (milliseconds < 10) {timeStr += "0";}
                 timeStr += to_string(milliseconds);
                 clock.setString(timeStr); 
 
@@ -106,7 +106,7 @@ int main() {
                 pPlayer->movement(pPlayer->getCircle());
 //enemy movement
                 for (Enemies* enemy : enemies) {
-                    enemy->followPlayer(*pPlayer);
+                    enemy->followPlayer(*pPlayer, enemies);
                 }
 
 //collision detection

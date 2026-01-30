@@ -11,3 +11,4 @@
 [x] detect enemy touching player - NEEDS TWEAKING
 [x] draw a square where all enemies will spawn - danger zone
 [x] killed by in game over screen
+[x] collisions for enemies, so they dont stack and merge into one

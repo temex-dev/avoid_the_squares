@@ -33,7 +33,7 @@ public:
     [[nodiscard]] static int getEnemyCount();
 
     void generateName();
-    void followPlayer(Player& player);
+    void followPlayer(Player& player, vector<Enemies*> &enemies);
     void draw(sf::RenderWindow& window);
 
     static void resetEnemyCount();

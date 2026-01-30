@@ -30,7 +30,6 @@ bool Player::detectCollision(Enemies& enemy) const {
         return true;
     }
 
-
     return false;
 }
 

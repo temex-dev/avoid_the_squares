@@ -51,4 +51,5 @@ const float ENEMY_INTERVAL = 15.f;
 
 extern string LAST_HIT;
 
+
 #endif // GLOBALS_H

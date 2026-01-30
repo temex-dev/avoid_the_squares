@@ -54,25 +54,40 @@ void Enemies::draw(sf::RenderWindow& window) {
     window.draw(rectangle);
 
 }
-void Enemies::followPlayer(Player& player) {
+void Enemies::followPlayer(Player& player, vector<Enemies*> &enemies) {
     sf::Vector2f playerPos = player.getCircle().getPosition();
     sf::Vector2f enemyPos = rectangle.getPosition();
+    sf::Vector2f move(0.f, 0.);
 
-    float x = 0.f, y = 0.f;
+    if (playerPos.x > enemyPos.x) { move.x = ENEMY_SPEED; }
+    else if (playerPos.x < enemyPos.x) { move.x = -ENEMY_SPEED; }
 
-    if (playerPos.x > enemyPos.x) {
-        x = ENEMY_SPEED;
-    } else if (playerPos.x < enemyPos.x) {
-        x = -ENEMY_SPEED;
+    if (playerPos.y > enemyPos.y) { move.y = ENEMY_SPEED; }
+    else if (playerPos.y < enemyPos.y) { move.y = -ENEMY_SPEED; }
+
+//check for collision with other enemies
+//X axis
+    rectangle.move({ move.x, 0.f });
+    for (Enemies* other : enemies) {
+        if (other == this) continue;
+        if (rectangle.getGlobalBounds().findIntersection(
+            other->rectangle.getGlobalBounds())) {
+            rectangle.move({ -move.x, 0.f }); // undo X move
+            break;
+        }
     }
 
-    if (playerPos.y > enemyPos.y) {
-        y = ENEMY_SPEED;
-    } else if (playerPos.y < enemyPos.y) {
-        y = -ENEMY_SPEED;
+//Y axis
+    rectangle.move({ 0.f, move.y });
+    for (Enemies* other : enemies) {
+        if (other == this) continue;
+        if (rectangle.getGlobalBounds().findIntersection(
+            other->rectangle.getGlobalBounds())) {
+            rectangle.move({ 0.f, -move.y }); // undo Y move
+            break;
+        }
     }
 
-    rectangle.move({x, y});
 }
 sf::RectangleShape& Enemies::getRectangle() const {
     return const_cast<sf::RectangleShape&>(this->rectangle);
