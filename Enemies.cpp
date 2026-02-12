@@ -59,36 +59,44 @@ void Enemies::followPlayer(Player& player, vector<Enemies*> &enemies) {
     sf::Vector2f enemyPos = rectangle.getPosition();
     sf::Vector2f move(0.f, 0.);
 
-    if (playerPos.x > enemyPos.x) { move.x = ENEMY_SPEED; }
-    else if (playerPos.x < enemyPos.x) { move.x = -ENEMY_SPEED; }
+    if (playerPos.x > enemyPos.x) move.x = ENEMY_SPEED;
+    else if (playerPos.x < enemyPos.x) move.x = -ENEMY_SPEED;
 
-    if (playerPos.y > enemyPos.y) { move.y = ENEMY_SPEED; }
-    else if (playerPos.y < enemyPos.y) { move.y = -ENEMY_SPEED; }
+    if (playerPos.y > enemyPos.y) move.y = ENEMY_SPEED;
+    else if (playerPos.y < enemyPos.y) move.y = -ENEMY_SPEED;
 
-//check for collision with other enemies
-//X axis
-    rectangle.move({ move.x, 0.f });
-    for (Enemies* other : enemies) {
+    sf::FloatRect currentBounds = rectangle.getGlobalBounds();
+    
+    sf::FloatRect nextPosY = currentBounds;
+    sf::FloatRect nextPosX = currentBounds;
+    nextPosX.position.x += move.x;
+    nextPosY.position.y += move.y;
+
+    bool collisionX = false;
+    bool collisionY = false;
+
+    for (const auto& other : enemies) {
         if (other == this) continue;
-        if (rectangle.getGlobalBounds().findIntersection(
-            other->rectangle.getGlobalBounds())) {
-            rectangle.move({ -move.x, 0.f }); // undo X move
+        if (nextPosX.findIntersection(other->getRectangle().getGlobalBounds())) {
+            collisionX = true;
             break;
         }
     }
+    if (!collisionX) {
+        rectangle.move({move.x, 0.f});
+    }
 
-//Y axis
-    rectangle.move({ 0.f, move.y });
-    for (Enemies* other : enemies) {
+    for (const auto& other : enemies) {
         if (other == this) continue;
-        if (rectangle.getGlobalBounds().findIntersection(
-            other->rectangle.getGlobalBounds())) {
-            rectangle.move({ 0.f, -move.y }); // undo Y move
+        if (nextPosY.findIntersection(other->getRectangle().getGlobalBounds())) {
+            collisionY = true;
             break;
         }
     }
-
+    if (!collisionY) {
+        rectangle.move({0.f, move.y});
+    }
 }
 sf::RectangleShape& Enemies::getRectangle() const {
-    return const_cast<sf::RectangleShape&>(this->rectangle);
+    return (sf::RectangleShape&)this->rectangle;
 }
