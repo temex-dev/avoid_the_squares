@@ -6,6 +6,25 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o
  /home/tomas/Projects/avoid_the_squares/Enemies.h
  /home/tomas/Projects/avoid_the_squares/Player.h
  /home/tomas/Projects/avoid_the_squares/globals.h
+ /usr/include/SFML/Audio.hpp
+ /usr/include/SFML/Audio/AudioResource.hpp
+ /usr/include/SFML/Audio/Export.hpp
+ /usr/include/SFML/Audio/InputSoundFile.hpp
+ /usr/include/SFML/Audio/Listener.hpp
+ /usr/include/SFML/Audio/Music.hpp
+ /usr/include/SFML/Audio/OutputSoundFile.hpp
+ /usr/include/SFML/Audio/PlaybackDevice.hpp
+ /usr/include/SFML/Audio/Sound.hpp
+ /usr/include/SFML/Audio/SoundBuffer.hpp
+ /usr/include/SFML/Audio/SoundBufferRecorder.hpp
+ /usr/include/SFML/Audio/SoundChannel.hpp
+ /usr/include/SFML/Audio/SoundFileFactory.hpp
+ /usr/include/SFML/Audio/SoundFileFactory.inl
+ /usr/include/SFML/Audio/SoundFileReader.hpp
+ /usr/include/SFML/Audio/SoundFileWriter.hpp
+ /usr/include/SFML/Audio/SoundRecorder.hpp
+ /usr/include/SFML/Audio/SoundSource.hpp
+ /usr/include/SFML/Audio/SoundStream.hpp
  /usr/include/SFML/Config.hpp
  /usr/include/SFML/Graphics.hpp
  /usr/include/SFML/Graphics/BlendMode.hpp
@@ -254,6 +273,7 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o
  /usr/include/c++/15.2.1/bits/shared_ptr_base.h
  /usr/include/c++/15.2.1/bits/sstream.tcc
  /usr/include/c++/15.2.1/bits/std_abs.h
+ /usr/include/c++/15.2.1/bits/std_function.h
  /usr/include/c++/15.2.1/bits/std_mutex.h
  /usr/include/c++/15.2.1/bits/stl_algo.h
  /usr/include/c++/15.2.1/bits/stl_algobase.h
@@ -280,6 +300,7 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o
  /usr/include/c++/15.2.1/bits/uniform_int_dist.h
  /usr/include/c++/15.2.1/bits/unique_ptr.h
  /usr/include/c++/15.2.1/bits/unordered_map.h
+ /usr/include/c++/15.2.1/bits/unordered_set.h
  /usr/include/c++/15.2.1/bits/uses_allocator.h
  /usr/include/c++/15.2.1/bits/uses_allocator_args.h
  /usr/include/c++/15.2.1/bits/utility.h
@@ -315,6 +336,7 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o
  /usr/include/c++/15.2.1/filesystem
  /usr/include/c++/15.2.1/format
  /usr/include/c++/15.2.1/fstream
+ /usr/include/c++/15.2.1/functional
  /usr/include/c++/15.2.1/initializer_list
  /usr/include/c++/15.2.1/iomanip
  /usr/include/c++/15.2.1/ios
@@ -344,6 +366,7 @@ CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o
  /usr/include/c++/15.2.1/type_traits
  /usr/include/c++/15.2.1/typeinfo
  /usr/include/c++/15.2.1/unordered_map
+ /usr/include/c++/15.2.1/unordered_set
  /usr/include/c++/15.2.1/utility
  /usr/include/c++/15.2.1/variant
  /usr/include/c++/15.2.1/vector
@@ -406,6 +429,25 @@ CMakeFiles/avoid_the_squares.dir/Player.cpp.o
  /home/tomas/Projects/avoid_the_squares/Enemies.h
  /home/tomas/Projects/avoid_the_squares/Player.h
  /home/tomas/Projects/avoid_the_squares/globals.h
+ /usr/include/SFML/Audio.hpp
+ /usr/include/SFML/Audio/AudioResource.hpp
+ /usr/include/SFML/Audio/Export.hpp
+ /usr/include/SFML/Audio/InputSoundFile.hpp
+ /usr/include/SFML/Audio/Listener.hpp
+ /usr/include/SFML/Audio/Music.hpp
+ /usr/include/SFML/Audio/OutputSoundFile.hpp
+ /usr/include/SFML/Audio/PlaybackDevice.hpp
+ /usr/include/SFML/Audio/Sound.hpp
+ /usr/include/SFML/Audio/SoundBuffer.hpp
+ /usr/include/SFML/Audio/SoundBufferRecorder.hpp
+ /usr/include/SFML/Audio/SoundChannel.hpp
+ /usr/include/SFML/Audio/SoundFileFactory.hpp
+ /usr/include/SFML/Audio/SoundFileFactory.inl
+ /usr/include/SFML/Audio/SoundFileReader.hpp
+ /usr/include/SFML/Audio/SoundFileWriter.hpp
+ /usr/include/SFML/Audio/SoundRecorder.hpp
+ /usr/include/SFML/Audio/SoundSource.hpp
+ /usr/include/SFML/Audio/SoundStream.hpp
  /usr/include/SFML/Config.hpp
  /usr/include/SFML/Graphics.hpp
  /usr/include/SFML/Graphics/BlendMode.hpp
@@ -654,6 +696,7 @@ CMakeFiles/avoid_the_squares.dir/Player.cpp.o
  /usr/include/c++/15.2.1/bits/shared_ptr_base.h
  /usr/include/c++/15.2.1/bits/sstream.tcc
  /usr/include/c++/15.2.1/bits/std_abs.h
+ /usr/include/c++/15.2.1/bits/std_function.h
  /usr/include/c++/15.2.1/bits/std_mutex.h
  /usr/include/c++/15.2.1/bits/stl_algo.h
  /usr/include/c++/15.2.1/bits/stl_algobase.h
@@ -680,6 +723,7 @@ CMakeFiles/avoid_the_squares.dir/Player.cpp.o
  /usr/include/c++/15.2.1/bits/uniform_int_dist.h
  /usr/include/c++/15.2.1/bits/unique_ptr.h
  /usr/include/c++/15.2.1/bits/unordered_map.h
+ /usr/include/c++/15.2.1/bits/unordered_set.h
  /usr/include/c++/15.2.1/bits/uses_allocator.h
  /usr/include/c++/15.2.1/bits/uses_allocator_args.h
  /usr/include/c++/15.2.1/bits/utility.h
@@ -715,6 +759,7 @@ CMakeFiles/avoid_the_squares.dir/Player.cpp.o
  /usr/include/c++/15.2.1/filesystem
  /usr/include/c++/15.2.1/format
  /usr/include/c++/15.2.1/fstream
+ /usr/include/c++/15.2.1/functional
  /usr/include/c++/15.2.1/initializer_list
  /usr/include/c++/15.2.1/iomanip
  /usr/include/c++/15.2.1/ios
@@ -744,6 +789,7 @@ CMakeFiles/avoid_the_squares.dir/Player.cpp.o
  /usr/include/c++/15.2.1/type_traits
  /usr/include/c++/15.2.1/typeinfo
  /usr/include/c++/15.2.1/unordered_map
+ /usr/include/c++/15.2.1/unordered_set
  /usr/include/c++/15.2.1/utility
  /usr/include/c++/15.2.1/variant
  /usr/include/c++/15.2.1/vector
@@ -806,6 +852,25 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o
  /home/tomas/Projects/avoid_the_squares/Enemies.h
  /home/tomas/Projects/avoid_the_squares/Player.h
  /home/tomas/Projects/avoid_the_squares/globals.h
+ /usr/include/SFML/Audio.hpp
+ /usr/include/SFML/Audio/AudioResource.hpp
+ /usr/include/SFML/Audio/Export.hpp
+ /usr/include/SFML/Audio/InputSoundFile.hpp
+ /usr/include/SFML/Audio/Listener.hpp
+ /usr/include/SFML/Audio/Music.hpp
+ /usr/include/SFML/Audio/OutputSoundFile.hpp
+ /usr/include/SFML/Audio/PlaybackDevice.hpp
+ /usr/include/SFML/Audio/Sound.hpp
+ /usr/include/SFML/Audio/SoundBuffer.hpp
+ /usr/include/SFML/Audio/SoundBufferRecorder.hpp
+ /usr/include/SFML/Audio/SoundChannel.hpp
+ /usr/include/SFML/Audio/SoundFileFactory.hpp
+ /usr/include/SFML/Audio/SoundFileFactory.inl
+ /usr/include/SFML/Audio/SoundFileReader.hpp
+ /usr/include/SFML/Audio/SoundFileWriter.hpp
+ /usr/include/SFML/Audio/SoundRecorder.hpp
+ /usr/include/SFML/Audio/SoundSource.hpp
+ /usr/include/SFML/Audio/SoundStream.hpp
  /usr/include/SFML/Config.hpp
  /usr/include/SFML/Graphics.hpp
  /usr/include/SFML/Graphics/BlendMode.hpp
@@ -1054,6 +1119,7 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o
  /usr/include/c++/15.2.1/bits/shared_ptr_base.h
  /usr/include/c++/15.2.1/bits/sstream.tcc
  /usr/include/c++/15.2.1/bits/std_abs.h
+ /usr/include/c++/15.2.1/bits/std_function.h
  /usr/include/c++/15.2.1/bits/std_mutex.h
  /usr/include/c++/15.2.1/bits/stl_algo.h
  /usr/include/c++/15.2.1/bits/stl_algobase.h
@@ -1080,6 +1146,7 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o
  /usr/include/c++/15.2.1/bits/uniform_int_dist.h
  /usr/include/c++/15.2.1/bits/unique_ptr.h
  /usr/include/c++/15.2.1/bits/unordered_map.h
+ /usr/include/c++/15.2.1/bits/unordered_set.h
  /usr/include/c++/15.2.1/bits/uses_allocator.h
  /usr/include/c++/15.2.1/bits/uses_allocator_args.h
  /usr/include/c++/15.2.1/bits/utility.h
@@ -1115,6 +1182,7 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o
  /usr/include/c++/15.2.1/filesystem
  /usr/include/c++/15.2.1/format
  /usr/include/c++/15.2.1/fstream
+ /usr/include/c++/15.2.1/functional
  /usr/include/c++/15.2.1/initializer_list
  /usr/include/c++/15.2.1/iomanip
  /usr/include/c++/15.2.1/ios
@@ -1144,6 +1212,7 @@ CMakeFiles/avoid_the_squares.dir/main.cpp.o
  /usr/include/c++/15.2.1/type_traits
  /usr/include/c++/15.2.1/typeinfo
  /usr/include/c++/15.2.1/unordered_map
+ /usr/include/c++/15.2.1/unordered_set
  /usr/include/c++/15.2.1/utility
  /usr/include/c++/15.2.1/variant
  /usr/include/c++/15.2.1/vector
@@ -1209,6 +1278,7 @@ avoid_the_squares
  /usr/lib/libgcc_s.so
  /usr/lib/libgcc_s.so.1
  /usr/lib/libm.so
+ /usr/lib/libsfml-audio.so
  /usr/lib/libsfml-graphics.so
  /usr/lib/libsfml-system.so
  /usr/lib/libsfml-window.so
@@ -1217,6 +1287,7 @@ avoid_the_squares
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a
  /usr/lib/ld-linux-x86-64.so.2
+ /usr/lib/libFLAC.so.14
  /usr/lib/libX11.so.6
  /usr/lib/libXau.so.6
  /usr/lib/libXcursor.so.1
@@ -1234,8 +1305,12 @@ avoid_the_squares
  /usr/lib/libfreetype.so.6
  /usr/lib/libm.so.6
  /usr/lib/libmvec.so.1
+ /usr/lib/libogg.so.0
  /usr/lib/libpng16.so.16
  /usr/lib/libudev.so.1
+ /usr/lib/libvorbis.so.0
+ /usr/lib/libvorbisenc.so.2
+ /usr/lib/libvorbisfile.so.3
  /usr/lib/libxcb.so.1
  /usr/lib/libz.so.1
  /home/tomas/Projects/avoid_the_squares/build/CMakeFiles/avoid_the_squares.dir/Enemies.cpp.o

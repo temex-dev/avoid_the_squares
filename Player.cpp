@@ -1,7 +1,15 @@
 #include "Player.h"
 #include "Enemies.h"
+#include "globals.h"
+#include <SFML/System/Sleep.hpp>
 
 string LAST_HIT;
+
+sf::Sound hitSound(HIT_SOUND);
+sf::Sound warpSound(WARP_SOUND);
+sf::Sound deathSound(DEATH_SOUND);
+
+bool playedDeathSound = false;
 
 string Player::getName() const {
     return this->name;
@@ -11,6 +19,7 @@ int Player::getHealth() const {
 }
 void Player::takeDamage(int damage) {
     if (this->damageCooldown.getElapsedTime().asSeconds() >= 1.0f) {
+        hitSound.play();
         this->health -= damage;
         if (this->health < 0) {
             this->health = 0;
@@ -34,7 +43,16 @@ bool Player::detectCollision(Enemies& enemy) const {
 }
 
 bool Player::isAlive() const {
-    return this->health > 0;
+    if (this->health > 0) {
+        return true;
+    }
+    else {
+        if (!playedDeathSound) {
+            deathSound.play();
+            playedDeathSound = true;
+        }
+        return false;
+    }
 }
 
 void Player::moveRight(sf::CircleShape& circle) {
@@ -49,7 +67,7 @@ void Player::moveUp(sf::CircleShape& circle) {
 void Player::moveDown(sf::CircleShape& circle) {
     circle.move({0.f, PLAYER_SPEED});
 }
-void Player::draw(sf::RenderWindow& window) {
+void Player::draw(sf::RenderWindow& window, float maxHP) {
     string name = this->getName();
     sf::RectangleShape healthBackground;
     sf::RectangleShape healthForeground;
@@ -60,7 +78,7 @@ void Player::draw(sf::RenderWindow& window) {
     nameText.setFillColor(sf::Color::White);
     nameText.setString(name);
 
-    healthBackground.setSize({100.f, 10.f});
+    healthBackground.setSize({ maxHP, 10.f});
     healthBackground.setFillColor(sf::Color::Red);
     healthBackground.setPosition({ this->circle.getPosition().x - 25.f, this->circle.getPosition().y - 15.f });
 
@@ -95,16 +113,20 @@ void Player::movement(sf::CircleShape& circle) {
 //wrapping around the screen
     // Wrap around horizontally
     if (circle.getPosition().x > WINDOW_SIZE) {
+        warpSound.play();
         circle.setPosition({0.f, circle.getPosition().y});
     }
     if (circle.getPosition().x < -PLAYER_SIZE * 2) {
+        warpSound.play();
         circle.setPosition({WINDOW_SIZE, circle.getPosition().y});
     }
     // Wrap around vertically
     if (circle.getPosition().y > WINDOW_SIZE) {
+        warpSound.play();
         circle.setPosition({circle.getPosition().x, 0.f});
     }
     if (circle.getPosition().y < -PLAYER_SIZE * 2) {
+        warpSound.play();
         circle.setPosition({circle.getPosition().x, WINDOW_SIZE});
     }
 }

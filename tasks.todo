@@ -6,9 +6,10 @@
 [x] place timer at top of the screen
 [x] place somewhere count of enemies
 [x] place player, enemy name above shape
-[] menu(cli?) - choose player name, starting enemy count, player health, enemy damage
+[x] menu(cli?) - choose player name, starting enemy count, player health, enemy damage
 [x] let player teleport between walls - go right, appear left
 [x] detect enemy touching player - NEEDS TWEAKING
 [x] draw a square where all enemies will spawn - danger zone
 [x] killed by in game over screen
 [x] collisions for enemies, so they dont stack and merge into one
+[] leaderboard for best scores - name, time and amount of enemies at the end

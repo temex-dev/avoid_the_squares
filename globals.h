@@ -19,6 +19,7 @@
 #include <SFML/System/Sleep.hpp>
 #include <SFML/System/Clock.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Audio.hpp>
 
 using namespace std;
 
@@ -45,11 +46,19 @@ const float DEF_PLAYER_Y = 200.f;
 const float DEF_ENEMY_X = (float)WINDOW_SIZE / 2;
 const float DEF_ENEMY_Y = 600.f;
 
+const int DEF_ENEMY_DAMAGE = 20;
+const int DEF_PLAYER_HEALTH = 100;
+
 const sf::Font FONT("../resources/OMORI_GAME.ttf");
 
 const float ENEMY_INTERVAL = 15.f;
 
-extern string LAST_HIT;
+const sf::SoundBuffer HIT_SOUND("../resources/hit-sound.mp3");
+const sf::SoundBuffer WARP_SOUND("../resources/warp.mp3");
+const sf::SoundBuffer DEATH_SOUND("../resources/death.mp3");
 
+
+
+extern string LAST_HIT;
 
 #endif // GLOBALS_H

@@ -8,6 +8,7 @@ avoid_the_squares: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libsfml-graphics.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libsfml-window.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libsfml-system.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libsfml-audio.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libm.so \
@@ -41,6 +42,11 @@ avoid_the_squares: \
   /usr/lib/libXcursor.so.1 \
   /usr/lib/libXi.so.6 \
   /usr/lib/libudev.so.1 \
+  /usr/lib/libvorbis.so.0 \
+  /usr/lib/libvorbisfile.so.3 \
+  /usr/lib/libvorbisenc.so.2 \
+  /usr/lib/libFLAC.so.14 \
+  /usr/lib/libogg.so.0 \
   /usr/lib/libz.so.1 \
   /usr/lib/libbz2.so.1.0 \
   /usr/lib/libpng16.so.16 \
@@ -70,6 +76,8 @@ CMakeFiles/avoid_the_squares.dir/Player.cpp.o:
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libsfml-window.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libsfml-system.so:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libsfml-audio.so:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libstdc++.so:
 
@@ -136,6 +144,16 @@ CMakeFiles/avoid_the_squares.dir/Player.cpp.o:
 /usr/lib/libXi.so.6:
 
 /usr/lib/libudev.so.1:
+
+/usr/lib/libvorbis.so.0:
+
+/usr/lib/libvorbisfile.so.3:
+
+/usr/lib/libvorbisenc.so.2:
+
+/usr/lib/libFLAC.so.14:
+
+/usr/lib/libogg.so.0:
 
 /usr/lib/libz.so.1:
 

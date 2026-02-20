@@ -21,8 +21,6 @@ public:
             this->circle.setFillColor(sf::Color(WHITE_VEIN.r, WHITE_VEIN.g, WHITE_VEIN.b));
             this->circle.setPosition(sf::Vector2<float>(DEF_PLAYER_X, DEF_PLAYER_Y));
             this->damageCooldown.restart();
-            cout << "Player " << this->name << " created with " << this->health << " health at x,y: " << this->x << "," << this->y << ".\n";
-
     }
 
     ~Player() = default;
@@ -38,7 +36,7 @@ public:
     void moveUp(sf::CircleShape& circle);
     void moveDown(sf::CircleShape& circle);
     void movement(sf::CircleShape& circle);
-    void draw(sf::RenderWindow& window);
+    void draw(sf::RenderWindow& window, float maxHP);
 
     [[nodiscard]] bool detectCollision(Enemies& enemy) const;
     void takeDamage(int damage);

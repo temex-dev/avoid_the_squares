@@ -8,4 +8,4 @@ add_executable(avoid_the_squares main.cpp
                 Player.cpp
                 Player.h)
 
-target_link_libraries(avoid_the_squares -lsfml-graphics -lsfml-window -lsfml-system)
+target_link_libraries(avoid_the_squares sfml-graphics sfml-window sfml-system sfml-audio)

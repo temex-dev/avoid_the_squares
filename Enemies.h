@@ -22,7 +22,6 @@ public:
             this->rectangle.setSize({ENEMY_SIZE, ENEMY_SIZE});
             this->rectangle.setFillColor(sf::Color(RED_VEIN.r, RED_VEIN.g, RED_VEIN.b));
             this->rectangle.setPosition(sf::Vector2<float>(DEF_ENEMY_X, DEF_ENEMY_Y));
-            cout << "Enemy " << this->name << " created with " << this->damage << " damage at x,y: "<< this->x << "," << this->y << ".\n";
     }
 
     ~Enemies() = default;

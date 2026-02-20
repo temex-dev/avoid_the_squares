@@ -1,8 +1,44 @@
 #include "Player.h"
 #include "Enemies.h"
 #include "globals.h"
+#include <SFML/Audio/Sound.hpp>
 
 int main() {
+// Game CLI menu
+    string name;
+    int health;
+    int damage;
+    char choice;
+
+    cout << "Avoid The Squares\n";
+    cout << "Instructions:\n";
+    cout << "1. Use WASD keys to move your character (the circle).\n";
+    cout << "2. Avoid the red squares (enemies) that will follow you.\n";
+    cout << "3. Every 15 seconds, a new enemy will be added to the game.\n";
+    cout << "4. If an enemy touches you, you will lose health. The game ends when your health reaches zero.\n";
+    cout << "5. Try to survive as long as possible and see how long you can last!\n";
+    cout << "Press 'Enter' to continue...";
+    cin.get();
+    cout << "Enter your name: ";
+    getline(cin, name);
+    cout << "Press 'D' to play with default settings or 'C' for custom settings\n";
+    cin >> choice;
+    if (choice == 'C' || choice == 'c') {
+        cout << "Enter player health (default " << DEF_PLAYER_HEALTH << "(might be buggy with higher values)): ";
+        cin >> health;
+        cout << "Enter enemy damage (default " << DEF_ENEMY_DAMAGE << "): ";
+        cin >> damage;
+    }
+    else if (choice == 'D' || choice == 'd') {
+        health = DEF_PLAYER_HEALTH;
+        damage = DEF_ENEMY_DAMAGE;
+    }
+    else {
+        cout << "Invalid choice. Using default settings.\n";
+        health = DEF_PLAYER_HEALTH;
+        damage = DEF_ENEMY_DAMAGE;
+    }
+
     sf::RenderWindow window(sf::VideoMode({WINDOW_SIZE, WINDOW_SIZE}),
             "Avoid the Squares",
             sf::Style::Default,
@@ -38,8 +74,8 @@ int main() {
 
         bool gameOver = false;
 
-        auto *pPlayer = new Player("Hero", 100, window);
-        auto *pEnemy = new Enemies(20, window);
+        auto *pPlayer = new Player(name, health, window);
+        auto *pEnemy = new Enemies(damage, window);
         enemies.push_back(pEnemy);
 
 //game loop
@@ -98,7 +134,7 @@ int main() {
 
 //spawn new enemy every 15s
                 if (enemySpawnClock.getElapsedTime().asSeconds() >= 15.f) {
-                    auto *newEnemy = new Enemies(20, window);
+                    auto *newEnemy = new Enemies(damage, window);
                     enemies.push_back(newEnemy);
                     enemySpawnClock.restart();
                 }
@@ -119,7 +155,7 @@ int main() {
 //drawing on screen
                 enemyCount.setString("Enemies: " + to_string(Enemies::getEnemyCount()));
                 window.draw(dangerZone);
-                pPlayer->draw(window);
+                pPlayer->draw(window, (float)health);
                 for (Enemies* enemy : enemies) {
                     enemy->draw(window);
                 }
