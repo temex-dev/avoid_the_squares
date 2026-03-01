@@ -78,11 +78,11 @@ void Player::draw(sf::RenderWindow& window, float maxHP) {
     nameText.setFillColor(sf::Color::White);
     nameText.setString(name);
 
-    healthBackground.setSize({ maxHP, 10.f});
+    healthBackground.setSize({ 100, 10.f});
     healthBackground.setFillColor(sf::Color::Red);
     healthBackground.setPosition({ this->circle.getPosition().x - 25.f, this->circle.getPosition().y - 15.f });
 
-    healthForeground.setSize({ (float)(this->getHealth()), 10.f });
+    healthForeground.setSize({ (float)(100 / maxHP) * this->getHealth(), 10.f });
     healthForeground.setFillColor(sf::Color::Green);
     healthForeground.setPosition({ this->circle.getPosition().x - 25.f, this->circle.getPosition().y - 15.f });
 

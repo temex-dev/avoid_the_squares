@@ -15,4 +15,4 @@
 [] leaderboard for best scores - name, time and amount of enemies at the end
 [] more enemy variant(move only on x, y; faster or slower)
 [] background music-dynamic pls
-[] calculate heathbar by %, have it set width
+[x] calculate heathbar by %, have it set width

@@ -29,10 +29,9 @@ const int WINDOW_SIZE = 800;
 
 
 struct vect3 { int r, g, b; };
-const vect3 GREEN_VEIN = {75, 83, 32};
-const vect3 RED_VEIN = {136, 69, 19};
-const vect3 WHITE_VEIN = {210, 180, 140};
-
+const vect3 GREEN_VEIN = {75, 83, 32};      //background
+const vect3 RED_VEIN = {136, 69, 19};       //normal enemy
+const vect3 WHITE_VEIN = {210, 180, 140};   //player
 
 const float PLAYER_SPEED = 5.0f;
 const float ENEMY_SPEED = 2.0f;
